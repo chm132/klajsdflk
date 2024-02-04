@@ -13,6 +13,7 @@ import SequencePage from '../pages/Auth/JoinPage/SequencePage';
 import LoginPage from '../pages/Auth/LoginPage/page';
 import CategoryPage from '../pages/CategoryPage/page';
 import SurveyPage from '../pages/SurveyPage/page';
+import SurveyPage2 from '../pages/SurveyPage2/page';
 
 const Routes = () => {
   const location = useLocation();
@@ -31,6 +32,11 @@ const Routes = () => {
         <Route index element={<HomePage />} />
         <Route path=":category/:categoryId" element={<CategoryPage />} />
         <Route path=":category/:categoryId/survey" element={<SurveyPage />} />
+
+        <Route
+          path=":category/:categoryId/survey/2"
+          element={<SurveyPage2 />}
+        />
 
         {/* 인증과정 (로그인, 회원가입) 라우팅입니다. */}
         <Route path="auth">

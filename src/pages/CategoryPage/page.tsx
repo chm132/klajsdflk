@@ -31,9 +31,22 @@ const CategoryPage = () => {
     pageNo = '1';
   }
 
-  const { data } = useGetCategoryLessonsQuery({ categoryId });
+  const { data, error } = useGetCategoryLessonsQuery({ categoryId });
   // error가 뜬경우 해당 페이지에 대한 데이터가 존재하지 않으면 에러가 남
   // 에러 메시지 꼭 읽어보기
+  if (error) {
+    return (
+      <div>
+        <TimeLine
+          title={categoryName}
+          imgSrc={`/assets/TimeLine/${categoryMapping[categoryName]}.png`}
+          contents={`${categoryName}에 있는 디지털 서비스 사용이 어려우신가요? 올래에서 함께 배우세요!`}
+        />
+        <FilterBox />
+        <p>Network Error...</p>
+      </div>
+    );
+  }
   if (data) {
     const lessonData = data.result.lessonList;
     console.log(lessonData);
