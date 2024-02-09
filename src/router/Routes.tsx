@@ -12,8 +12,11 @@ import JoinPage from '../pages/Auth/JoinPage/page';
 import SequencePage from '../pages/Auth/JoinPage/SequencePage';
 import LoginPage from '../pages/Auth/LoginPage/page';
 import CategoryPage from '../pages/CategoryPage/page';
-import SurveyPage from '../pages/SurveyPage/page';
-import SurveyPage2 from '../pages/SurveyPage2/page';
+import SurveyPage from '../pages/SurveyPage/page1/page';
+import SurveyPage2 from '../pages/SurveyPage/page2/page';
+import SurveyPage3 from '../pages/SurveyPage/page3/page';
+import SurveyPage4 from './../pages/SurveyPage/page4/page';
+import SurveyPage5 from '../pages/SurveyPage/page5/page';
 
 const Routes = () => {
   const location = useLocation();
@@ -36,6 +39,18 @@ const Routes = () => {
         <Route
           path=":category/:categoryId/survey/2"
           element={<SurveyPage2 />}
+        />
+        <Route
+          path=":category/:categoryId/survey/3"
+          element={<SurveyPage3 />}
+        />
+        <Route
+          path=":category/:categoryId/survey/4"
+          element={<SurveyPage4 />}
+        />
+        <Route
+          path=":category/:categoryId/survey/5"
+          element={<SurveyPage5 />}
         />
 
         {/* 인증과정 (로그인, 회원가입) 라우팅입니다. */}
