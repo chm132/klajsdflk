@@ -19,7 +19,7 @@ const Label = ({ age }: LabelProps) => {
         }`}
         onClick={() => onClick()}
       >
-        <img src="/assets/Survey/checkbox.svg"></img>
+        <img src="/assets/Survey/checkimg.svg"></img>
       </div>
     </div>
   );

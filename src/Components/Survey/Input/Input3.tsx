@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-interface InputProps3 {
+interface InputProps2 {
   question: string;
   className?: string;
   onClick?: any;
   clicked?: boolean;
 }
 
-const Input3 = ({ question }: InputProps3) => {
+const Input2 = ({ question }: InputProps2) => {
   const [clicked, setClicked] = useState(false);
   const onClick = () => setClicked(!clicked);
 
@@ -23,12 +23,12 @@ const Input3 = ({ question }: InputProps3) => {
       <p>{question}</p>
       <img
         className={`${!clicked ? '' : 'hidden'}`}
-        src="/assets/Survey/checkboximg.svg"
+        src="/assets/Survey/checkimg.svg"
       ></img>
     </div>
   );
 };
 
-export default Input3;
+export default Input2;
 
 // 단수 선택 박스

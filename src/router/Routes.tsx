@@ -17,6 +17,7 @@ import SurveyPage2 from '../pages/SurveyPage/page2/page';
 import SurveyPage3 from '../pages/SurveyPage/page3/page';
 import SurveyPage4 from './../pages/SurveyPage/page4/page';
 import SurveyPage5 from '../pages/SurveyPage/page5/page';
+import SurveyPage6 from '../pages/SurveyPage/page6/page';
 
 const Routes = () => {
   const location = useLocation();
@@ -51,6 +52,10 @@ const Routes = () => {
         <Route
           path=":category/:categoryId/survey/5"
           element={<SurveyPage5 />}
+        />
+        <Route
+          path=":category/:categoryId/survey/6"
+          element={<SurveyPage6 />}
         />
 
         {/* 인증과정 (로그인, 회원가입) 라우팅입니다. */}

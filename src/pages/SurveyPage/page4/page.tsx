@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import TimeLine from '../../../Components/TimeLine';
 import { categoryMapping } from '../../CategoryPage/page';
 import { useParams, useNavigate } from 'react-router-dom';
-import Input2 from '../../../Components/Survey/Input2';
+import Input2 from '../../../Components/Survey/Input/Input2';
+import Progressbar from '../../../Components/Survey/Progressbar';
+import Label2 from '../../../Components/Survey/Label/Label2';
 
 const SurveyPage4 = () => {
   const categoryName = useParams()?.category || '스마트폰';
@@ -16,6 +18,7 @@ const SurveyPage4 = () => {
         contents={`${categoryName}에 있는 디지털 서비스 사용이 어려우신가요? 올래에서 함께 배우세요!`}
       />
       <div className="w-full h-[627px] bg-[#E6E6E6]">
+        <Progressbar />
         <div className="w-[1142px] h-[480px] bg-[#FFFFFF] rounded-[30px] shadow-xl relative m-auto top-[47px]">
           <div className="survey w-full h-4/6 flex">
             <div className="m-14">
@@ -27,17 +30,47 @@ const SurveyPage4 = () => {
                   복수 응답 가능
                 </p>
               </div>
-              <div className="click mt-6">
-                <Input2 question="평일 오전(오전 8시 ~ 오후 12시)" />
-                <Input2 question="평일 오후(오후 12시 ~ 오후 6시)" />
-                <Input2 question="평일 저녁(오후 6시 ~ 오후 11시)" />
+              <div className="flex">
+                <p className=" text-[16px] text-[#666666] mt-16 mr-9">
+                  오전 (8:00 ~ 12:00)
+                </p>
+                <div className="click mt-6 flex gap-6">
+                  <Label2 content="월" />
+                  <Label2 content="화" />
+                  <Label2 content="수" />
+                  <Label2 content="목" />
+                  <Label2 content="금" />
+                  <Label2 content="토" />
+                  <Label2 content="일" />
+                </div>
               </div>
-            </div>
-            <div className=" m-14">
-              <div className="click mt-[52px]">
-                <Input2 question="주말 오전(오전 8시 ~ 오후 12시)" />
-                <Input2 question="주말 오후(오후 12시 ~ 오후 6시)" />
-                <Input2 question="주말 저녁(오후 6시 ~ 오후 11시)" />
+              <div className="flex">
+                <p className="text-[16px] text-[#666666] mt-10 mr-9">
+                  오전 (8:00 ~ 12:00)
+                </p>
+                <div className="click mt-6 flex gap-6">
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                </div>
+              </div>
+              <div className="flex">
+                <p className="text-[16px] text-[#666666] mt-10 mr-9">
+                  오전 (8:00 ~ 12:00)
+                </p>
+                <div className="click mt-6 flex gap-6">
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                  <Label2 content="" />
+                </div>
               </div>
             </div>
           </div>
