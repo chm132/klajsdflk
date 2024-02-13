@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TimeLine from '../../../Components/TimeLine';
 import { categoryMapping } from '../../CategoryPage/page';
 import { useParams, useNavigate } from 'react-router-dom';
+import Progressbar from '../../../Components/Survey/Progressbar';
 
 interface Citydetails {
   [city: string]: {
@@ -109,6 +110,7 @@ const SurveyPage6 = () => {
         contents={`${categoryName}에 있는 디지털 서비스 사용이 어려우신가요? 올래에서 함께 배우세요!`}
       />
       <div className="w-full h-[627px] bg-[#E6E6E6]">
+        <Progressbar width={948} />
         <div className="w-[1142px] h-[480px] bg-[rgb(255,255,255)] rounded-[30px] shadow-xl flex relative m-auto top-[47px]">
           <div className="flex gap-16">
             <div className="pt-14 pl-14 ">

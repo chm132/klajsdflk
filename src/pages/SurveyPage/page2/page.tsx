@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TimeLine from '../../../Components/TimeLine';
 import { categoryMapping } from '../../CategoryPage/page';
 import { useParams, useNavigate } from 'react-router-dom';
-import Input2 from '../../../Components/Survey/Input/Input2';
+import Input2 from '../../../Components/Survey/Input/Input1';
 import Progressbar from '../../../Components/Survey/Progressbar';
 
 const SurveyPage2 = () => {
@@ -17,7 +17,7 @@ const SurveyPage2 = () => {
         contents={`${categoryName}에 있는 디지털 서비스 사용이 어려우신가요? 올래에서 함께 배우세요!`}
       />
       <div className="w-full h-[627px] bg-[#E6E6E6]">
-        <Progressbar />
+        <Progressbar width={270} />
         <div className="w-[1142px] h-[480px] bg-[#FFFFFF] rounded-[30px] shadow-xl relative m-auto top-[47px]">
           <div className="survey w-full h-4/6 flex">
             <div className="box1 m-14">

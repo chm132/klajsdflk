@@ -3,6 +3,7 @@ import TimeLine from '../../../Components/TimeLine';
 import { categoryMapping } from '../../CategoryPage/page';
 import { useParams, useNavigate } from 'react-router-dom';
 
+
 const SurveyPage = () => {
   const categoryName = useParams()?.category || '스마트폰';
   const navigate = useNavigate();
@@ -15,14 +16,14 @@ const SurveyPage = () => {
       />
       <div className="w-full h-[627px] bg-[#E6E6E6]">
         <div className="w-[1142px] h-[480px] bg-[#FFFFFF] rounded-[30px] shadow-xl flex relative m-auto top-[47px]">
-          <div className=" relative top-[158px] left-[326px]">
+        <div className=" relative top-[158px] left-[326px]">
             <p className=" text-[32px] font-semibold text-center">
               고객님께 딱 맞는 교육을 찾아드릴게요!
             </p>
             <p className=" text-[24px] text-center">몇 가지만 답해주세요.</p>
             <button
               className=" hover:opacity-80 relative top-[36px] left-[130px] w-[271px] h-[51px] bg-primary01 rounded-[50px] text-white flex justify-center py-3"
-              onClick={() => navigate('/스마트폰/1/survey/2')}
+              
             >
               <p className="font-medium">설문 시작하기</p>
               <img

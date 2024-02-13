@@ -4,12 +4,19 @@ import { categoryMapping } from '../../CategoryPage/page';
 import { useParams, useNavigate } from 'react-router-dom';
 import Input2 from '../../../Components/Survey/Input/Input2';
 import Label from '../../../Components/Survey/Label/Label';
-import Progressbar from '../../../Components/Survey/Progressbar';
 import Label2 from '../../../Components/Survey/Label/Label2';
+import Progressbar from '../../../Components/Survey/Progressbar';
+import { click } from '@testing-library/user-event/dist/click';
 
 const SurveyPage3 = () => {
   const categoryName = useParams()?.category || '스마트폰';
   const navigate = useNavigate();
+
+  const [clicked, setClicked] = useState('');
+  const changeTag = (question: string) => {
+    setClicked(question)
+  }
+  const buttonList =['남성', '여성', '기타'];
 
   return (
     <div>
@@ -19,7 +26,7 @@ const SurveyPage3 = () => {
         contents={`${categoryName}에 있는 디지털 서비스 사용이 어려우신가요? 올래에서 함께 배우세요!`}
       />
       <div className="w-full h-[627px] bg-[#E6E6E6]">
-        <Progressbar />
+       <Progressbar width={404} />
         <div className="w-[1142px] h-[480px] bg-[#FFFFFF] rounded-[30px] shadow-xl relative m-auto top-[47px]">
           <div className="survey w-full h-4/6 flex">
             <div className="box1 m-14">
@@ -29,9 +36,16 @@ const SurveyPage3 = () => {
                 </p>
               </div>
               <div className="click mt-6">
-                <Input2 question="남성" />
-                <Input2 question="여성" />
-                <Input2 question="기타" />
+                <Input2 question={buttonList[0]}
+                onClick={() => changeTag(buttonList[0])}
+                clicked={clicked === buttonList[0]}
+                />
+                <Input2 question={buttonList[1]} 
+                onClick={() => changeTag(buttonList[1])}
+                clicked={clicked === buttonList[1]}/>
+                <Input2 question={buttonList[2]} 
+                onClick={() => changeTag(buttonList[2])}
+                clicked={clicked === buttonList[2]}/>
               </div>
             </div>
             <div className="box1 m-14">
@@ -71,7 +85,7 @@ const SurveyPage3 = () => {
               <p className="font-medium">다음으로</p>
               <img
                 className=" px-1 py-1"
-                src="/assets/Survey/nextimg.svg"
+                src="/assets/Survey/nextimg.svg "
               ></img>
             </button>
           </div>
